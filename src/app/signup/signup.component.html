@@ -1,0 +1,62 @@
+    <div [routerLink]="['']" class="mx-4 mt-4" style="cursor: pointer;">
+        <img src="https://docrdsfx76ssb.cloudfront.net/static/1632941648/pages/wp-content/uploads/2021/08/bitly_logo.svg"  alt="Bitly" width="100px">
+      </div>
+
+	<h2 style="text-align: center;">SignUp</h2>
+
+    <div class="container-fluid" >
+        <form [formGroup]="userForm" (ngSubmit)="submituser()">
+            <div class="row mt-4" style="display: flex; flex-direction: column;align-content: center;">
+                <div class="col-lg-3">
+                    <label for="">User Email</label>
+                    <input [ngClass]="{
+                        'has-error':userForm.controls.userEmail.touched && userForm.controls.userEmail.invalid,
+                        'has-success' : userForm.controls.userEmail.touched && userForm.controls.userEmail.valid
+                    }" type="email" formControlName="userEmail" class="form-control">
+                    <span style="color:red;"
+                    *ngIf="userForm.controls.userEmail.touched && userForm.controls.userEmail.invalid">Please Enter Valid Email</span>
+                </div>
+    
+                <div class="col-lg-3">
+                    <label for="">Password</label>
+                    <input [ngClass]="{
+                        'has-error':userForm.controls.password.touched && userForm.controls.password.invalid,
+                        'has-success' : userForm.controls.password.touched && userForm.controls.password.valid
+                    }" type="password" formControlName="password" class="form-control">
+                    <span style="color:red;"
+                     *ngIf="userForm.controls.password.touched && userForm.controls.password.invalid">Enter Password</span>
+                </div>
+    
+                <div class="col-lg-3">
+                    <label for="">Confirm Password</label>
+                    <input [ngClass]="{
+                        'has-error':userForm.controls.cnfpassword.touched && userForm.controls.cnfpassword.invalid,
+                        'has-success' : userForm.controls.cnfpassword.touched && userForm.controls.cnfpassword.valid
+                    }" type="password" formControlName="cnfpassword" class="form-control">
+                    <span style="color:red;"
+                     *ngIf="userForm.controls.cnfpassword.touched && userForm.controls.cnfpassword.invalid">Password doesn't match</span>
+                </div>
+    
+                <div class="col-lg-3">
+                    <label for="">Date of Birth</label>
+                    <input [ngClass]="{
+                        'has-error':userForm.controls.dob.touched && userForm.controls.dob.invalid,
+                        'has-success' : userForm.controls.dob.touched && userForm.controls.dob.valid
+                    }" type="date" formControlName="dob" class="form-control">
+                    <span style="color:red;"
+                     *ngIf="userForm.controls.dob.touched && userForm.controls.dob.invalid">Enter Date of Birth</span>
+                </div>
+    
+            </div>
+    
+        
+    
+            
+            <div class="row mt-4">
+                <div class="col-lg-12" style="text-align: center;">
+                    <input type="submit" class="btn btn-primary btn-sm " [routerLink]="['']" style="text-align: center;" value="Sign Up">
+                </div>
+            </div>
+        </form>
+    </div>
+	

@@ -1,0 +1,15 @@
+<div class="row mt-5" *ngIf="final.length>0">
+    <h6 class="text-black-300 mb-3 mt-3" style="text-align: center;">URL Click Count</h6>
+    <div  style="display: flex; justify-content: space-evenly;">
+        <ngx-charts-gauge 
+
+        [view]="view"
+        [units]="'clicks'"
+        [scheme]="colorScheme"
+        [results]="final"
+        [legend]="showLegend"
+        [legendPosition]="legendPosition">
+      </ngx-charts-gauge>
+    </div>
+   
+</div>
