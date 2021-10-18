@@ -14,7 +14,6 @@ export class ChartsComponent implements OnInit {
 
   view: [number,number] = [1000, 500];
   final: Array<chartData>=[];
-  units:string="";
 
   gradient = false;
   showLegend = true;
