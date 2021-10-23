@@ -1,4 +1,4 @@
-# URL-Shortner
+# URL-shortner
 
 
 https://url-shrink.netlify.app
