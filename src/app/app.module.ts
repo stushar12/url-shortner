@@ -14,6 +14,10 @@ import { NewTabComponent } from './new-tab/new-tab.component';
 import { ChartsComponent } from './charts/charts.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFireModule } from '@angular/fire/compat'
+
+
 
 @NgModule({
   declarations: [
@@ -32,7 +36,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     HttpClientModule,
     NgxChartsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyBUA09rx6BkvokHLcEmPuAhGZ2PnM3oY2k",
+      authDomain: "practice-fc4a3.firebaseapp.com",
+      projectId: "practice-fc4a3",
+      storageBucket: "practice-fc4a3.appspot.com",
+      messagingSenderId: "220300770051",
+      appId: "1:220300770051:web:aeb2614a8e12724b96c736"
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

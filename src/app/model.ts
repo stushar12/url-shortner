@@ -19,3 +19,17 @@ export interface chartData
     name:string,
     value:number
 }
+
+export let config={
+    API_KEY:"AIzaSyBUA09rx6BkvokHLcEmPuAhGZ2PnM3oY2k"
+}
+
+export interface AuthResponse
+{
+        idToken:string;
+        email:string;
+        refreshToken:string;
+        expiresIn:string;
+        localId:string;
+        registerd?:boolean;
+}

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {User } from '../model';
-import { Url } from '../model';
+import { Url,config,AuthResponse,User } from '../model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +9,24 @@ export class UserService {
 
   url_list:Array<Url> = [];
   constructor(private http:HttpClient) { }
+
+  signUp(email:string,password:string)
+  {
+    return this.http.post<AuthResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key='+config.API_KEY,{
+        email:email,
+        password:password,
+        returnSecureToken:true
+      })
+  }
+
+  signIn(email:string,password:string)
+  {
+    return this.http.post<AuthResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key='+config.API_KEY,{
+      email:email,
+      password:password,
+      returnSecureToken:true
+    })
+  }
 
   saveuser(user:User)
   {

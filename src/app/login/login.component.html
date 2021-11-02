@@ -6,7 +6,7 @@
 	<h2 style="text-align: center">Login</h2>
 
 	<div class="container-fluid">
-        <form [formGroup]="userForm">
+        <form [formGroup]="userForm" (ngSubmit)="submituser()">
             <div class="row mt-4">
 
                 <div class="col-lg-12">
@@ -45,7 +45,8 @@
             
             <div class="row mt-4">
                 <div class="col-lg-12" style="text-align: center;">
-                    <input type="submit" class="btn btn-primary btn-sm " [routerLink]="['/dashboard']"   style="text-align: center;" value="Login">
+                    <input type="submit" class="btn btn-primary btn-sm " style="text-align: center;" value="Login">
+                    <input type="submit" class="btn btn-primary btn-sm mx-2 " [routerLink]="['/signup']" routerLinkActive="router-link-active"  style="text-align: center;" value="Sign Up First">
                 </div>
             </div>
         </form>

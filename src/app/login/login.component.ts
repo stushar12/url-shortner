@@ -24,5 +24,33 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+  submituser()
+  {
+    const email=this.userForm.value.userEmail;
+    const password=this.userForm.value.password;
+
+    if(email!="" && password!="")
+    {
+      this.userService.signIn(email,password).subscribe(res=>
+        {
+          console.log(res);
+          this.userForm.reset();
+          this.router.navigate(['/dashboard']);
+        },
+        err =>
+        {
+          alert("Wrong Credentials\n"+" Try Again");
+        }
+        )
+    }
+    else
+    {
+      alert("Enter all the fields");
+//       <div class="alert alert-danger" role="alert">
+//   A simple danger alert—check it out!
+// </div> 
+    }
+    
+  }
+
  }
